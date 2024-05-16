@@ -1,0 +1,55 @@
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+a {
+  text-decoration: none;
+}
+nav a {
+  color: black;
+  font-weight: bolder;
+  font-size: large;
+}
+nav a:hover {
+  color: blueviolet;
+}
+
+.edit-button,
+button {
+  border: 1px solid transparent;
+  background-color: yellowgreen;
+  padding: 0.25rem 0.5rem;
+  box-sizing: border-box;
+  font-size: 15px;
+  font-family: "DejaVu Serif";
+  cursor: pointer;
+}
+.edit-button:hover,
+button:hover {
+  background-color: blueviolet;
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+.bookItem {
+  margin-bottom: 1rem;
+}
+
+#list-of-books {
+  padding: 0;
+}
+
+#book-form *,
+#book-form-edit * {
+  display: block;
+}
+#book-form input,
+#book-form-edit input {
+  margin-bottom: 0.5rem;
+}
