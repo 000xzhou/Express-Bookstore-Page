@@ -1,5 +1,6 @@
 const listOfBooks = document.getElementById("list-of-books");
 
+// fetches a list of books
 fetch("https://express-bookstore-app.onrender.com/books")
   .then((response) => {
     if (!response.ok) {
@@ -14,6 +15,7 @@ fetch("https://express-bookstore-app.onrender.com/books")
     console.error("There was a problem with the fetch operation:", error);
   });
 
+// put into HTML page
 function addBookToList(book) {
   book.forEach((book) => {
     const listItem = document.createElement("li");
@@ -27,7 +29,7 @@ function addBookToList(book) {
         <strong>Pages:</strong> ${book.pages}<br>
         <strong>Publisher:</strong> ${book.publisher}<br>
         <strong>Year:</strong> ${book.year}<br>
-        <a class="edit-button" href="/front-end/pages/updateBook.html?isbn=${book.isbn}">Edit</a>
+        <a class="edit-button" href="../updateBook.html?isbn=${book.isbn}">Edit</a>
         <button class="delete-button" data-isbn="${book.isbn}">Delete</button>
       `;
     listOfBooks.appendChild(listItem);
@@ -36,10 +38,5 @@ function addBookToList(book) {
     listItem
       .querySelector(".delete-button")
       .addEventListener("click", handleDelete);
-
-    // Add event listener to the edit button
-    // listItem
-    //   .querySelector(".edit-button")
-    //   .addEventListener("click", handleEdit);
   });
 }

@@ -1,3 +1,4 @@
+// delete a book
 function handleDelete(event) {
   const isbn = event.target.dataset.isbn;
   fetch(`https://express-bookstore-app.onrender.com/books/${isbn}`, {

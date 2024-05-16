@@ -5,6 +5,7 @@ const isbn = params.get("isbn");
 if (!isbn) {
   console.error("No ISBN provided");
 } else {
+  // create form data
   fetch(`https://express-bookstore-app.onrender.com/books/${isbn}`)
     .then((response) => {
       if (!response.ok) {
@@ -14,7 +15,6 @@ if (!isbn) {
     })
     .then((book) => {
       // Populate the form with book details
-      // form.isbn.value = book.book.isbn;
       form.title.value = book.book.title;
       form.author.value = book.book.author;
       form.publisher.value = book.book.publisher;
@@ -30,7 +30,7 @@ if (!isbn) {
       console.error("There was a problem with the fetch operation:", error);
     });
 }
-
+// submit response
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   const updatedBook = {

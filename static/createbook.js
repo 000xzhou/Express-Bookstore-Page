@@ -1,4 +1,6 @@
 const form = document.getElementById("book-form");
+
+// sumbit response
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
