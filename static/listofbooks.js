@@ -20,11 +20,15 @@ function addBookToList(book) {
   book.forEach((book) => {
     const listItem = document.createElement("li");
     listItem.classList.add("bookItem");
+    let displayUrl = book.amazon_url;
+    if (book.amazon_url.length > 30) {
+      displayUrl = `${book.amazon_url.substring(0, 30)}...`;
+    }
     listItem.innerHTML = `
         <strong>Title:</strong> ${book.title}<br>
         <strong>Author:</strong> ${book.author}<br>
         <strong>ISBN:</strong> ${book.isbn}<br>
-        <strong>URL:</strong> <a href="${book.amazon_url}" target="_blank">${book.amazon_url}</a><br>
+        <strong>URL:</strong> <a href="${book.amazon_url}" target="_blank">${displayUrl}</a><br>
         <strong>Language:</strong> ${book.language}<br>
         <strong>Pages:</strong> ${book.pages}<br>
         <strong>Publisher:</strong> ${book.publisher}<br>
