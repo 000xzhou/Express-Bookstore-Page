@@ -29,7 +29,7 @@ function addBookToList(book) {
         <strong>Pages:</strong> ${book.pages}<br>
         <strong>Publisher:</strong> ${book.publisher}<br>
         <strong>Year:</strong> ${book.year}<br>
-        <a class="edit-button" href="../updateBook.html?isbn=${book.isbn}">Edit</a>
+        <a class="edit-button" href="updateBook.html?isbn=${book.isbn}">Edit</a>
         <button class="delete-button" data-isbn="${book.isbn}">Delete</button>
       `;
     listOfBooks.appendChild(listItem);
